@@ -12,9 +12,7 @@ public class Item {
 		this.preco = Main.scanner.nextDouble();
 		Main.scanner.nextLine();
 	}
-	
-	public Item(String nome, double preco) {
-		this.nome = nome;
-		this.preco = preco;
+	void showItem() {
+		System.out.println("- " + nome + " R$ " + preco);
 	}
 }

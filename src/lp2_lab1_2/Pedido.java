@@ -6,17 +6,19 @@ public class Pedido {
 	String cliente;
 	int id;
 	ArrayList<Item> listaItem;
+	
+	//normalmente isso seria uma funcao, mas nao sei como funciona em java
+	//dificil traduzir meus macetes de c++ ...
 	static int getID = 1;
 	
-	//dificil traduzir meus macetes de c++ em java...
+	
 	public Pedido() {
-		
-		//nao testei se funciona ainda!
 		this.id = getID++;
 		listaItem = new ArrayList<Item>();
 		System.out.println("Nome do cliente: ");
 		this.cliente = Main.scanner.nextLine();
 		int input = 1;
+		//construtor do pedido já inclui o menu de criação
 		do {
 			//construtor do item deve iniciar o proprio menu de criação
 			listaItem.add(new Item());
@@ -40,7 +42,7 @@ public class Pedido {
 		System.out.println("Itens:");
 		double precoTotal=0;
 		for (Item i : listaItem) {
-			System.out.println("- " + i.nome + " R$ " + i.preco);
+			i.showItem();
 			precoTotal+=i.preco;
 		}
 		System.out.println("----------------------------------------"); 
